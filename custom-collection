@@ -1,0 +1,45 @@
+<div class="container-custom-collection">
+    {% for block in section.blocks %}
+      <div class="box-custom-collection">
+        <div class="custom-collection">
+          <p class="collection-title">{{ block.settings.collection.title }}</p>
+          <a href="{{ block.settings.collection.url }}">Shop now</a>
+        </div>
+        <div class="cus-collection-image">
+          <img src="{{ block.settings.collection | img_url: 'master' }}" alt="{{ block.settings.collection.title }}">
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+  {% schema %}
+{
+    "name": "custom-collectoo",
+    "settings": [
+
+
+    ],
+    "blocks": [
+    {
+      "type": "block",
+      "name": "custom-collectoo",
+    "settings": [
+
+      {
+  "type": "collection",
+  "id": "collection",
+  "label": "Collection"
+}
+
+
+    ]
+  }
+    ],
+    "presets": [
+   {
+      "name": "custom-collectoo"
+    }
+    ]
+  }
+{% endschema %}
